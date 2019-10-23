@@ -45,7 +45,7 @@ $(document).ready(function() {
             return;
         }
 
-        $.post("index.php",{Content:$val});
+        $.post("addContent.php",{Content:$val});
 
         // 在 table 裡面插入一行 <tr> ... </tr> 代表新增的事項
         $("table").append(

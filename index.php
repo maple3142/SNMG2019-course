@@ -1,41 +1,18 @@
 <?php 
 
-include_once("conn.php");
+// 要使用 $_SESSION 都要先 session_start()
 session_start();
 
-
-if(isset($_POST['Logout'])&&$_POST['Logout']==="Logout")
-    $_SESSION['login'] = false;
-
-if(isset($_POST['Name']) && isset($_POST['Password'])){
-    $username = $_POST['Name'];
-    $password = $_POST['Password'];
-    $sql = "SELECT * from users where username = '$username' and password = '$password'";
-    $result = $db->query($sql)->fetchAll();
-    if($result){
-        $_SESSION['login'] = true;
-        $_SESSION['username'] = $username;
-        // print_r($result);
-    }else{
-        $_SESSION['login'] = false;
-        // echo "<h3>登入失敗</h3> <br>";
-    }
-}
-
-if(isset($_POST['Content'])){
-    $username = $_SESSION['username'];
-    $content = $_POST['Content'];
-    $sql = "INSERT INTO messages (username, content) VALUES ('$username', '$content')";
-    $db->exec($sql);
-}
+// 資料庫位置帳密資料
+include_once("conn.php");
 
 function isLogin(){
-    if(isset($_SESSION['login'])&&$_SESSION['login'] == true)
+    // isset() 如果有設置的話
+    if(isset($_SESSION['login']) && $_SESSION['login'] == true)
         return true;
     return false;
 }
 ?>
-
 
 <!-- 告訴電腦這是html檔案 -->
 <!DOCTYPE html>
@@ -55,7 +32,7 @@ function isLogin(){
     </head>
     <body>
         <section>
-            <form action="index.php" method="post">
+            <form action="login.php" method="post">
                 <ul>
                     <li>
                         <p>2019_SNMG_COURSE_EP.2</p>
