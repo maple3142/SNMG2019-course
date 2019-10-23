@@ -45,6 +45,8 @@ $(document).ready(function() {
             return;
         }
 
+        $.post("index.php",{Content:$val});
+
         // 在 table 裡面插入一行 <tr> ... </tr> 代表新增的事項
         $("table").append(
             '<tr><td>{0}</td><td>{1}</td><td><button class="delete_btn">Delete</button></td></tr>'.format(
