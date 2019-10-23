@@ -23,6 +23,7 @@ input[id="input_bar"] {
 }
 
 button {
+    padding: 0px;
     font-size: 1.1rem;
     border-radius: 0.1rem;
     background-color: #333;
