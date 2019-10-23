@@ -22,9 +22,9 @@ $(document).ready(function() {
         }
         // 在 table 裡面插入一行 <tr> ... </tr> 代表新增的事項
         $("table").append(
-            "<tr><td><p>yabasu</p></td><td><p>" +
+            "<tr><td>yabasu</td><td>" +
                 $val +
-                '</p></td><td><button class="delete_btn">Delete</button></td></tr>'
+                '</td><td><button class="delete_btn">Delete</button></td></tr>'
         );
         // 上面 $("#input_bar").val() 是用來取得目前 #input_bar 裡面填入的文字
 
