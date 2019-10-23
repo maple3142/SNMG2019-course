@@ -1,0 +1,179 @@
+/* 把標題左右置中和字體調大 */
+h1 {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+/* 設定背景顏色 */
+body {
+    margin: 0px;
+    background-color: #fafafa;
+}
+/* 輸入欄加大字體、加大寬度 */
+input[id="input_bar"] {
+    margin-right: 10px;
+    font-size: 1.1rem;
+    width: 70%;
+    color: #333333;
+    /* background: transparent; */
+    border-radius: 0.1rem;
+    padding: 10px 10px;
+    border: solid 1px #111111;
+}
+
+button {
+    font-size: 1.1rem;
+    border-radius: 0.1rem;
+    background-color: #333;
+    color: #fafafa;
+    border: solid 1px #676767;
+    padding-top: 4px;
+    /* padding-bottom: 4px; */
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #444444;
+}
+
+.delete_btn {
+    background-color: #eb4034;
+    border: none;
+}
+
+/* table字體加大 */
+table {
+    font-size: 1.5rem;
+    border-collapse: collapse;
+}
+
+/* table加入邊界 */
+tr {
+    border-bottom: solid 1px #111111;
+    /* padding: 10px, 10px; */
+}
+
+tr th,
+tr td {
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+tr td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+tr th:last-child,
+tr td:last-child {
+    text-align: right;
+}
+
+tr th:nth-child(1),
+tr td:nth-child(1) {
+    padding-left: 1rem;
+    width: 25%;
+}
+/* tr th:nth-child(3) {
+    width: 100%-7%-25%-10%;
+} */
+tr th:nth-child(3),
+tr td:nth-child(3) {
+    padding-right: 1rem;
+    width: 10%;
+}
+
+td button:hover {
+    background-color: tomato;
+}
+
+/* 讓table的每一個row不要這麼高 */
+p {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    padding-right: 12rem;
+    padding-left: 12rem;
+    overflow: hidden;
+    background-color: #333;
+    backdrop-filter: saturate(180%) blur(20px);
+}
+
+li {
+    float: left;
+}
+
+li button,
+li a,
+li input {
+    font-size: 12px;
+    display: block;
+    color: white;
+    background: transparent;
+    border: none;
+    text-align: center;
+    padding: 14px 16px;
+    /* text-decoration: none; */
+}
+
+li:first-child {
+    margin-right: auto;
+}
+
+li input {
+    border-radius: 0.1rem;
+    padding: 10px 10px;
+    text-align: left;
+    background-color: #676767;
+    border: solid 1px #676767;
+    backdrop-filter: saturate(180%) blur(20px);
+}
+
+input:focus,
+button:focus {
+    outline: none;
+}
+
+li input::placeholder {
+    color: #aeaeae;
+}
+
+li button:hover {
+    cursor: pointer;
+    color: #bfbfbf;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 17rem;
+    padding-right: 17rem;
+    margin-bottom: 3rem;
+}
+
+.container > * {
+    flex-grow: 1;
+}
+
+* {
+    font-family: "Consolas";
+    /* font-family: "SF Pro TC","HanHei TC","SF Pro Text","Myriad Set Pro","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial",sans-serif; */
+    font-weight: 400;
+    /* border: solid 1px red; */
+}
