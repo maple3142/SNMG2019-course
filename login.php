@@ -1,24 +1,24 @@
-<?php 
+<?php
 
 session_start();
 include_once("conn.php");
 
-if(isset($_POST['Logout'])&&$_POST['Logout']==="Logout")
-$_SESSION['login'] = false;
+if (isset($_POST['Logout']) && $_POST['Logout'] === "Logout") {
+	unset($_SESSION['username']);
+	unset($_SESSION['user_id']);
+}
 
-if(isset($_POST['Name']) && isset($_POST['Password'])){
-    $username = $_POST['Name'];
-    $password = $_POST['Password'];
-    $sql = "SELECT * from users where username = '$username' and password = '$password'";
-    $result = $db->query($sql)->fetchAll();
-    if($result){
-        $_SESSION['login'] = true;
-        $_SESSION['username'] = $username;
-        // print_r($result);
-    }else{
-        $_SESSION['login'] = false;
-        // echo "<h3>登入失敗</h3> <br>";
-    }
+if (isset($_POST['username']) && isset($_POST['password'])) {
+	$username = $_POST['username'];
+	$password = $_POST['password'];
+	$stat = $db->prepare("SELECT * from users where username = :username");
+	$stat->execute([
+		'username' => $username
+	]);
+	$result = $stat->fetch();
+	if ($result && password_verify($password, $result['password_hash'])) {
+		$_SESSION['username'] = $username;
+		$_SESSION['user_id'] = $result['id'];
+	}
 }
 header("location: index.php");
-?>
