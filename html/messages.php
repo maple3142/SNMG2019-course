@@ -15,7 +15,7 @@ function send_response()
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 	send_response();
 } else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content'])) {
-	if (!isset($_SESSION['login'])) {
+	if (!isset($_SESSION['username'])) {
 		die('Not logined');
 	}
 	$stat = $db->prepare("INSERT INTO messages (user_id, content) VALUES (:user_id, :content)");
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 	]);
 	send_response();
 } else if ($_SERVER['REQUEST_METHOD'] === 'DELETE' && isset($_DELETE['id'])) {
-	if (!isset($_SESSION['login'])) {
+	if (!isset($_SESSION['username'])) {
 		die('Not logined');
 	}
 	$stat = $db->prepare("DELETE FROM messages WHERE id = :id AND user_id = :user_id");

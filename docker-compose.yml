@@ -1,0 +1,31 @@
+version: '3'
+services:
+  web:
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+      - ./conf.d:/etc/nginx/conf.d/
+    links:
+      - "fpm:fpm"
+  fpm:
+    build: php-fpm
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./html:/usr/share/nginx/html 
+  db:
+    image: mariadb
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./html/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8080:80"
+    links:
+      - "db:db"
