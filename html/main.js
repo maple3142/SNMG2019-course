@@ -36,7 +36,7 @@ $('#input').on('submit', e => {
 	e.preventDefault()
 
 	const form = e.target
-	if (form.content.length > 60) {
+	if (form.content.value.length > 60) {
 		alert('Your comment is too long!!!!!!!!!!!')
 		return
 	}
