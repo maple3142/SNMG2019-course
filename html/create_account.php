@@ -1,7 +1,7 @@
 <?php
 // For development purpose only
 session_start();
-if (!isset($_SESSION['login'])) {
+if (!isset($_SESSION['username'])) {
 	die('Not logined');
 }
 include_once("conn.php");
