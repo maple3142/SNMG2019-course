@@ -25,50 +25,47 @@ function get_sess($k, $v = NULL)
 <body>
 	<section>
 		<form action="login.php" method="post">
-			<ul>
-				<li>
-					<p>2019_SNMG_COURSE_EP.2</p>
-				</li>
-				<?php if (!get_sess('username')) { ?>
-					<li>
-						<input type="text" name="username" placeholder="Input Your username" />
-					</li>
-					<li>
-						<input type="password" name="password" placeholder="password" />
-					</li>
-					<li>
-						<button class="active">Login</button>
-					</li>
-				<?php } else { ?>
-					<!-- Logout -->
-					<li>
-						<p id="user_name">Welcome!, <?php echo $_SESSION['username']; ?></p>
-					</li>
-					<li>
-						<button class="active" name="Logout" value="Logout">Logout</button>
-					</li>
-				<?php } ?>
-			</ul>
+			<nav>
+				<div class="nav-title">
+					<h1>2019_SNMG_COURSE_EP.2 (maple3142)</h1>
+				</div>
+				<div class="nav-items">
+					<?php if (!get_sess('username')) { ?>
+						<div>
+							<input type="text" name="username" placeholder="Username" autocomplete="off" />
+						</div>
+						<div>
+							<input type="password" name="password" placeholder="Password" autocomplete="off" />
+						</div>
+						<div>
+							<button class="active">Login</button>
+						</div>
+					<?php } else { ?>
+						<!-- Logout -->
+						<div>
+							<p id="user_name">Welcome!, <?php echo $_SESSION['username']; ?></p>
+						</div>
+						<div>
+							<button class="active" name="Logout" value="Logout">Logout</button>
+						</div>
+					<?php } ?>
+				</div>
+			</nav>
 		</form>
 	</section>
 
 	<section>
 		<div class="container">
-			<!-- 標題 -->
-			<h1>Message Board</h1>
+			<h2 class="title">Message Board</h2>
 		</div>
 		<?php if (get_sess('username')) { ?>
 			<form class="container" id="input">
-				<!-- 輸入欄 -->
-				<input id="input_bar" name="content" type="text" placeholder="Say something ヽ(✿ﾟ▽ﾟ)ノ" />
-
-				<!-- 新增按鈕 -->
+				<input id="input_bar" name="content" type="text" placeholder="Say something ヽ(✿ﾟ▽ﾟ)ノ" autocomplete="off" />
 				<button id="submit_btn" type="submit">Send</button>
 			</form>
 		<?php } ?>
 		<div class="container">
-			<!-- 裡面拿來放輸入資料的table -->
-			<table>
+			<table class="comments">
 				<thead>
 					<tr>
 						<th>Sender</th>

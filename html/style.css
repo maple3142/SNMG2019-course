@@ -1,180 +1,186 @@
-/* 把標題左右置中和字體調大 */
-h1 {
-    text-align: center;
-    font-size: 4rem;
-    font-weight: 600;
-    margin-bottom: 0;
+.title {
+	text-align: center;
+	font-size: 4rem;
+	font-weight: 600;
+	margin: 0;
 }
-/* 設定背景顏色 */
 body {
-    margin: 0px;
-    background-color: #fafafa;
+	margin: 0px;
+	background-color: #fafafa;
 }
-/* 輸入欄加大字體、加大寬度 */
-input[id="input_bar"] {
-    margin-right: 10px;
-    font-size: 1.1rem;
-    width: 70%;
-    color: #333333;
-    /* background: transparent; */
-    border-radius: 0.1rem;
-    padding: 10px 10px;
-    border: solid 1px #111111;
+#input_bar {
+	margin-right: 10px;
+	font-size: 1.1rem;
+	width: 70%;
+	color: #333333;
+	border-radius: 0.1rem;
+	padding: 10px 10px;
+	border: solid 1px #111111;
 }
 
 button {
-    padding: 0px;
-    font-size: 1.1rem;
-    border-radius: 0.1rem;
-    background-color: #333;
-    color: #fafafa;
-    border: solid 1px #676767;
-    line-height: 2.7rem;
-    height: 2.7rem;
-    vertical-align: middle;
-    padding-left: 9px;
-    padding-right: 9px;
+	padding: 0px;
+	font-size: 1.1rem;
+	border-radius: 0.1rem;
+	background-color: #333;
+	color: #fafafa;
+	border: solid 1px #676767;
+	line-height: 2.7rem;
+	height: 2.7rem;
+	vertical-align: middle;
+	padding-left: 9px;
+	padding-right: 9px;
 }
 
 button:hover {
-    cursor: pointer;
-    background-color: #444444;
+	cursor: pointer;
+	background-color: #444444;
 }
 
 button.delete_btn {
-    line-height: 2rem;
-    height: 2rem;
-    background-color: #eb4034;
-    border: none;
+	line-height: 2rem;
+	height: 2rem;
+	background-color: #eb4034;
+	border: none;
 }
 
-/* table字體加大 */
-table {
-    font-size: 1.5rem;
-    border-collapse: collapse;
+.comments {
+	margin-top: 1rem;
+	font-size: 1.5rem;
+	border-collapse: collapse;
+	width: 100%;
 }
 
-/* table加入邊界 */
-tr {
-    border-bottom: solid 1px #111111;
-    /* padding: 10px, 10px; */
+.comments tr {
+	border-bottom: solid 1px #111111;
 }
 
-tr th,
-tr td {
-    text-align: left;
-    font-size: 1.1rem;
+.comments tr th,
+.comments tr td {
+	text-align: left;
+	font-size: 1.1rem;
 }
 
-tr td {
-    padding-top: 10px;
-    padding-bottom: 10px;
+.comments tr td {
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
-tr th:last-child,
-tr td:last-child {
-    text-align: right;
+.comments tr th:last-child,
+.comments tr td:last-child {
+	text-align: right;
 }
 
-tr th:nth-child(1),
-tr td:nth-child(1) {
-    padding-left: 1rem;
-    width: 25%;
-}
-/* tr th:nth-child(3) {
-    width: 100%-7%-25%-10%;
-} */
-tr th:nth-child(3),
-tr td:nth-child(3) {
-    padding-right: 1rem;
-    width: 10%;
+.comments tr th:first-child,
+.comments tr td:first-child {
+	padding-left: 1rem;
+	width: 25%;
 }
 
-td button:hover {
-    background-color: tomato;
+.comments td button:hover {
+	background-color: tomato;
 }
 
-ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    padding-right: 12rem;
-    padding-left: 12rem;
-    overflow: hidden;
-    background-color: #333;
-    backdrop-filter: saturate(180%) blur(20px);
+nav {
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	padding-right: 14rem;
+	padding-left: 14rem;
+	overflow: hidden;
+	background-color: #333;
 }
 
-li {
-    float: left;
-    margin-left: 1rem;
+nav div * {
+	font-size: 12px;
+	color: white;
+	background: transparent;
+	border: none;
+	text-align: center;
 }
 
-li button,
-li p,
-li input {
-    font-size: 12px;
-    display: block;
-    color: white;
-    background: transparent;
-    border: none;
-    text-align: center;
-    padding-left: 16px;
-    padding-right: 16px;
-    /* text-decoration: none; */
+.nav-items {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.nav-items div {
+	margin-left: 0.5rem;
 }
 
-li:first-child {
-    margin-right: auto;
+.nav-items input {
+	border-radius: 0.1rem;
+	padding: 7px 10px;
+	text-align: left;
+	background-color: #676767;
+	line-height: 14px;
 }
 
-li input {
-    border-radius: 0.1rem;
-    padding: 7px 10px;
-    text-align: left;
-    background-color: #676767;
-    border: solid 1px #676767;
-    backdrop-filter: saturate(180%) blur(20px);
+.nav-items button {
+	color: white;
+	background-color: #676767;
+	border-radius: 0.1rem;
+	/*-webkit-appearance: none;*/
+	padding: 0px 10px;
+	margin: 7px 0px;
+	height: 28px;
+	line-height: 28px;
 }
 
 input:focus,
 button:focus {
-    outline: none;
+	outline: none;
 }
 
-li input::placeholder {
-    color: #c6c6c6;
+.nav-items input::placeholder {
+	color: #c6c6c6;
 }
 
-li button:hover {
-    cursor: pointer;
-    color: #bfbfbf;
+.nav-items button:hover {
+	cursor: pointer;
+	color: #bfbfbf;
 }
 
 section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-left: 17rem;
-    padding-right: 17rem;
-    margin-bottom: 3rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding-left: 14rem;
+	padding-right: 14rem;
+}
+
+@media all and (max-width: 1080px) {
+	.container {
+		padding-right: 0.5em;
+		padding-left: 0.5em;
+	}
+	nav {
+		justify-content: center;
+		padding-right: 0.5em;
+		padding-left: 0.5em;
+	}
+	.nav-title {
+		flex-basis: 100%;
+	}
+	.title {
+		font-size: 3rem;
+	}
 }
 
 .container > * {
-    flex-grow: 1;
+	flex-grow: 1;
 }
 
 * {
-    font-family: "Consolas";
-    /* font-family: "SF Pro TC","HanHei TC","SF Pro Text","Myriad Set Pro","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial",sans-serif; */
-    font-weight: 400;
-    /* border: solid 1px red; */
+	font-family: 'Consolas';
+	font-weight: 400;
 }
