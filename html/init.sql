@@ -15,4 +15,3 @@ CREATE TABLE messages(
 );
 INSERT INTO messages(user_id, content) VALUES(1, "<script>alert(1)</script>");
 INSERT INTO messages(user_id, content) VALUES(1, "';drop table users;--");
-INSERT INTO messages(user_id, content) VALUES(1, "emoji is ok too 😃");
